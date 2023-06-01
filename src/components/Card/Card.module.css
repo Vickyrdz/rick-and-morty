@@ -1,14 +1,67 @@
 .CardContenedor {
     background-color: black;
     font-size: 10px;
-    color: white
-    ;
+    color: white;
+    width: min-content;    ;
 }
+
+.tarjeta {
+    background-color: black;
+  }
+
+
+.arriba{
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.Close {
+    padding: 5px;
+    height: fit-content;
+    background-color: black;
+    color: beige;
+    border: none;
+    position: absolute;
+    right: 0;
+}
+
+.Titulo{
+    width: 100%;
+    text-align: center;
+    /* -webkit-text-stroke: 3px white; */
+    color: #30b4cb;
+    text-shadow: 0 0 10px green;
+    font-size: 25px;
+    z-index: 50;
+    -webkit-text-stroke: 1px rgba(0,0,0,0.5);
+
+}
+
+.Titulo.middle {
+    -webkit-text-stroke: 0.1em #FFF765;
+    z-index: 49;
+  }
+
+  .Titulo.bottom {
+    -webkit-text-stroke: 0.4em #a5f928;
+    z-index: 48;
+  }
 
 .imagenCard {
 
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+
+    
 }
 
 .description {
-    
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+}
+
+.tarjeta {
+  background-color: black;
 }

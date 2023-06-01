@@ -1,21 +1,23 @@
 import React from "react";
 import styles from './Card.module.css'
 
-// Esta tarjeta sabe como dibujar cada una de las propiedades que recibe
-// props.[lo que sea] es USAR LO QUE ME PASAN
 
-// props.name --> marta, luciano, juan
-
-export default function Card(props) {
+export default function Card(characters) {
    return (
       <div className={styles.CardContenedor}>
-         <button onClick={props.onClose}>X</button>
-         <img className={styles.imagenCard} src={props.image} height="250px" alt='' /> 
-         <h2>Name: {props.name}</h2>
-         <h2>Status: {props.status}</h2>
-         <h2>Species: {props.species}</h2>
-         <h2>Gender: {props.gender}</h2>
-         <h2>Origin: {props.origin}</h2>
+         <div className={styles.tarjeta}>
+            <div className={styles.arriba}>
+               <button className={styles.Close} onClick={() => characters.onClose(characters.id)}>X</button>
+               <h1 className={styles.Titulo}> {characters.name}</h1>
+            </div>
+            <img className={styles.imagenCard} src={characters.image} height="250px" alt='' />
+            <div className={styles.description}>
+               <h2>Status: {characters.status}</h2>
+               <h2>Species: {characters.species}</h2>
+               <h2>Gender: {characters.gender}</h2>
+               <h2>Origin: {characters.origin}</h2>
+            </div>
+         </div>
       </div>
    );
 }

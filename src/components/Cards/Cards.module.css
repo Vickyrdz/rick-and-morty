@@ -2,7 +2,10 @@
 .CardsContenedor {
     display: flex;
     flex-direction: row;
-    flex-wrap:nowrap; 
-    justify-content: space-between;
+    flex-wrap: wrap; 
+    justify-content: space-evenly;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
 }
 

@@ -3,27 +3,24 @@ import Card from '../Card/Card';
 import styles from './Cards.module.css'
 
 
-// Recibe un listado de personajes a través de las props (characters)
-// Es una lista, que le puedo hacer? ITERAR
-
-export default function Cards(props) {
+export default function Cards({characters, onClose}) {
    return (
       <div className={styles.CardsContenedor}>
          {
-            props.characters.map((character) => (
+            characters.map((user) => (
                <Card
-                  key={character.id}
-                  id={character.id}
-                  name={character.name}
-                  status={character.status}
-                  species={character.species}
-                  gender={character.gender}
-                  origin={character.origin.name}
-                  image={character.image}
-                  onClose={() => {}}
+                  key={user.id}
+                  id={user.id}
+                  name={user.name}
+                  status={user.status}
+                  species={user.species}
+                  gender={user.gender}
+                  origin={user.origin.name}
+                  image={user.image}
+                  onClose={onClose}
                />
             ))
          }
-      </div>
+      </div>  
    );
 }
