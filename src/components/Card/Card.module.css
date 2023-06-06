@@ -9,6 +9,11 @@
     background-color: black;
   }
 
+  
+.tarjeta:hover{
+  transform: scale(1.1);
+
+}
 
 .arriba{
     display: flex;
@@ -60,7 +65,9 @@
     padding-left: 30px;
     padding-right: 30px;
     text-align: center;
+    color: gray;
 }
+
 
 .tarjeta {
   background-color: black;
