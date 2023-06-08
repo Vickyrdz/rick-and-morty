@@ -1,1 +1,7 @@
-
+.App{
+    background-image: url('./assets/images/fondoApp.jpeg');
+    z-index: -1;
+    height: 100vh;
+    z-index: -1;
+   
+}

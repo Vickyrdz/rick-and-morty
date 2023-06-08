@@ -33,8 +33,6 @@ function App() {
       axios(`https://rickandmortyapi.com/api/character/${id}`)
          .then((response) => response.data)
          .then(( data ) => {
-            console.log(data);
-            console.log(data.name);
             setCharacters((oldChars) => [...oldChars, data]);
          })
          .catch(() => {
@@ -61,8 +59,7 @@ function App() {
   return (
     <div className={styles.App}>
 
-      <Nav onSearch={onSearch} />
-      {/* {pathname !== "/" && <Nav onSearch={onSearch} />}
+      {pathname !== "/" && <Nav onSearch={onSearch} />}
       <Routes>
       <Route path='/' exact element={
          <>
@@ -74,7 +71,7 @@ function App() {
       <Route path='/about' element={<About/>}/>
       <Route path='/favorites' element={<Favorites/>}></Route>
       <Route path='/detail/:id' element={<Detail/>}/>
-      </Routes> */}
+      </Routes>
     </div>
   );
 }

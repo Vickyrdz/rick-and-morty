@@ -54,9 +54,7 @@ function Card({id, name, species, origin, gender, image, onClose, status, addFav
                   <h1 className={styles.Titulo}>{name}</h1>
                </div>
                <img className={styles.imagenCard} src={image} height="250px" alt='' />
-               <div className={styles.description}>
-                  <h2>{status} - {species} - {gender} - Origin {origin}</h2>
-               </div>
+              
             </div>
          </div>
       </Link>

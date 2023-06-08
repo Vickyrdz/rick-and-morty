@@ -1,9 +1,8 @@
 .BannerContenedor {
-    background-image: url('../../assets/images/banner.jpeg');
-    background-color: black;
+    background-image: url('../../assets/images/banner2.png');
     height: 400px;
     background-repeat: no-repeat;
     background-position: center;
-    
+   
 }
 
