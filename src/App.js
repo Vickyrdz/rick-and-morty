@@ -5,6 +5,8 @@ import Banner from './components/Banner/Banner.jsx';
 import About from './components/About/About.jsx';
 import Detail from './components/Detail/Detail.jsx';
 import Form from './components/Form /Form.jsx';
+import Favorites from './components/Favorites/Favorites.jsx';
+
 import styles from './App.module.css';
 import {useEffect, useState,} from "react"; 
 import axios from 'axios'; 
@@ -24,7 +26,7 @@ function App() {
 
 
    const email = "vickyrodriguez544@gmail.com"; 
-   const password = "pass12345"; 
+   const password = "pass123"; 
 
 
    const onSearch = (id) => {
@@ -49,7 +51,7 @@ function App() {
    const login = (userData) => {
       if(userData.email===email && userData.password===password){
          setAccess(true); 
-         navigate("/"); 
+         navigate("/home"); 
       } else {
          alert("Datos incorrectos"); 
       }
@@ -58,15 +60,21 @@ function App() {
 
   return (
     <div className={styles.App}>
-      <Banner/>
-      {pathname !== "/" && <Nav onSearch={onSearch} />}
+
+      <Nav onSearch={onSearch} />
+      {/* {pathname !== "/" && <Nav onSearch={onSearch} />}
       <Routes>
-      {/* <Route path="/home" element={<Banner/>}/>  */}
-      <Route path='/' element={<Form login={login}/>}/>
+      <Route path='/' exact element={
+         <>
+            <Banner />
+            <Form login={login}/>
+         </>
+      }/>
       <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
       <Route path='/about' element={<About/>}/>
+      <Route path='/favorites' element={<Favorites/>}></Route>
       <Route path='/detail/:id' element={<Detail/>}/>
-      </Routes>
+      </Routes> */}
     </div>
   );
 }

@@ -28,9 +28,11 @@
    
 }
 
-.input:-webkit-autofill{
+input:-internal-autofill-selected {
     background-color: black;
 }
+
+/* input:-webkit-autofill */
 
 .p{
     color: red;

@@ -1,0 +1,51 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    padding: 15px 20px 0;
+    justify-content: space-between;
+}
+
+
+
+.searchBarContainer {
+    display: flex;
+}
+
+.searchBar {
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;    
+}
+
+.navbar img {
+    height: 50px;
+    width: 50px;
+}
+
+.navButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding-top: 9px;
+    align-items: center;
+}
+
+.link{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: 0.5s;
+    border: none;
+    background: black;
+    position: relative;
+    font-size: 16px;
+}
+
+.link:hover{
+    background: linear-gradient(45deg, #28b4cf, #a5f928);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: underline;
+}
+

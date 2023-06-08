@@ -7,9 +7,10 @@ import styles from './Form.module.css'
 
 export default function Form( {login} ) {
 
+
     const [userData, setUserData] = useState({
-        email: '', 
-        password: '', 
+        email: 'vickyrodriguez544@gmail.com', 
+        password: 'pass123', 
     })
 
 
@@ -32,6 +33,7 @@ export default function Form( {login} ) {
     }
 
     return (
+        
         <form onSubmit={submitHandler} className={styles.contenedor}>
             <div className={styles.ContenedorInputs}>
                 <label htmlFor="email"></label>
@@ -40,7 +42,7 @@ export default function Form( {login} ) {
             </div>
             <div>
                 <label htmlFor="password"></label>
-                <input type="text" name="password" placeholder="Tu contraseña..." value={userData.password} onChange={handleInputChange} className={styles.input}/>
+                <input type="password" name="password" placeholder="Tu contraseña..." value={userData.password} onChange={handleInputChange} className={styles.input}/>
             </div>
             <button type="submit" className={styles.button}>Ingresar</button>
         </form>

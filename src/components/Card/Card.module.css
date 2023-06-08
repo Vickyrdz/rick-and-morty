@@ -7,13 +7,10 @@
 
 .tarjeta {
     background-color: black;
+    
   }
 
   
-.tarjeta:hover{
-  transform: scale(1.1);
-
-}
 
 .arriba{
     display: flex;

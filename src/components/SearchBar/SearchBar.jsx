@@ -15,11 +15,11 @@ export default function SearchBar({ onSearch }) {
          <input className={styles.input}
           type='search' 
           onChange={handleChange} value={id}
-          placeholder="Sólo números"
+          placeholder="Busca tu personaje por ID..."
           />
          <button className={styles.button} 
          onClick={()=>{onSearch(id); setId('')}}>
-        Agregar
+        Buscar
         </button>
       </div>
    );
