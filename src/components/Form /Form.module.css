@@ -11,7 +11,6 @@
     color: grey;
     background: black;
     border-right: none;
-    border-right: none;
     border-left: none;
     border-top: none;
 }
@@ -32,11 +31,11 @@ input:-internal-autofill-selected {
     background-color: black;
 }
 
-/* input:-webkit-autofill */
 
 .p{
     color: red;
 }
+
 
 .button{
     background: black;
@@ -50,8 +49,7 @@ input:-internal-autofill-selected {
     border-radius: 12px;
     width: fit-content;
     margin-top: 25px;
-    
-   
+    transform-style: preserve-3d; 
 }
 
 .button::before{
@@ -67,6 +65,8 @@ input:-internal-autofill-selected {
     border-radius: 10px;
     filter: blur(8px);
     animation: glowing 20s linear infinite;
+    transform: translateZ(-1px);
+
 }
 
 @keyframes glowing {

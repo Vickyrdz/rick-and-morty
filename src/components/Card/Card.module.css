@@ -1,71 +1,94 @@
 .CardContenedor {
-    background-color: black;
-    font-size: 10px;
-    color: white;
-    width: min-content;    ;
+  background-color: black;
+  font-size: 10px;
+  color: white;
+  width: min-content;
 }
-
-.tarjeta {
-    background-color: black;
-    
-  }
-
-  
-
-.arriba{
-    display: flex;
-    width: 100%;
-    position: relative;
-}
-
-.Close {
-    padding: 5px;
-    height: fit-content;
-    background-color: black;
-    color: beige;
-    border: none;
-    position: absolute;
-    right: 0;
-}
-
-.Titulo{
-    width: 100%;
-    text-align: center;
-    /* -webkit-text-stroke: 3px white; */
-    color: #30b4cb;
-    text-shadow: 0 0 10px green;
-    font-size: 25px;
-    z-index: 50;
-    -webkit-text-stroke: 1px rgba(0,0,0,0.5);
-
-}
-
-.Titulo.middle {
-    -webkit-text-stroke: 0.1em #FFF765;
-    z-index: 49;
-  }
-
-  .Titulo.bottom {
-    -webkit-text-stroke: 0.4em #a5f928;
-    z-index: 48;
-  }
-
-.imagenCard {
-
-    border-bottom-left-radius: 25%;
-    border-bottom-right-radius: 25%;
-
-    
-}
-
-.description {
-    padding-left: 30px;
-    padding-right: 30px;
-    text-align: center;
-    color: gray;
-}
-
 
 .tarjeta {
   background-color: black;
+}
+
+.arriba {
+  display: flex;
+  width: 100%;
+  position: relative;
+  background: black;
+}
+
+.Close {
+  padding: 5px;
+  height: fit-content;
+  background-color: black;
+  color: beige;
+  border: none;
+  position: absolute;
+  right: 0;
+}
+
+.Titulo {
+  width: 100%;
+  text-align: center;
+  color: grey;
+  text-shadow: 0 0 10px black;
+  font-size: 25px;
+  padding-top: 5px;
+}
+
+.Titulo:hover{
+
+  background: -webkit-linear-gradient(to right, #28b4cf, #a5f928); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #a5f928, #28b4cf); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+}
+
+
+
+.Titulo.bottom {
+  -webkit-text-stroke: 0.4em #a5f928;
+  z-index: 48;
+}
+
+.imagenCard {
+  border-bottom-left-radius: 25%;
+  border-bottom-right-radius: 25%;
+}
+
+.description {
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: center;
+  color: gray;
+}
+
+.tarjeta {
+  background-color: black;
+}
+
+.cardLink {
+  text-decoration: none;
+  width: 100%;
+}
+
+.like {
+  border: none;
+  background: black;
+  height: min-content;
+  position: absolute;
+}
+
+.dislike{
+  position: absolute;
+  border: none;
+  background: black;
+  height: min-content;
+  font-size: 18px;
+  color: white;
+}
+
+.dislike:hover{
+  
 }
