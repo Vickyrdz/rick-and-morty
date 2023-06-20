@@ -1,16 +1,19 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import Card from "../Card/Card";
+import styles from './Favorites.module.css'
+import { removeFav } from "../../redux/actions";
 
-const Favorites = () => {
+
+const Favorites = ({ onClose }) => {
 
     const favorites = useSelector((state) => state.myFavorites);
 
     return (
-        <>
+        <div className={styles.favContenedor}>
             {
             favorites.map(
-                ({ id, name, status, species, gender, origin, image, onClose }) => {
+                ({ id, name, status, species, gender, origin, image}) => {
                     return <Card
                         key={id}
                         id={id}
@@ -24,8 +27,16 @@ const Favorites = () => {
                     />
                 })
             }
-        </>
+        </div>
     );
 };
 
-export default Favorites;
+const mapDispatchToProps = (dispatch) => {
+    return {
+       onClose: (id) => {
+          dispatch(removeFav(id))
+       }
+    };
+ };
+
+export default connect(null, mapDispatchToProps)(Favorites); 

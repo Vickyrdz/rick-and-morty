@@ -1,12 +1,14 @@
 .CardContenedor {
-  background-color: black;
   font-size: 10px;
   color: white;
   width: min-content;
+  padding-bottom: 25px;
+  border-bottom-left-radius: 25%;
+  border-bottom-right-radius: 25%;
 }
 
-.tarjeta {
-  background-color: black;
+.CardContenedor:hover {
+  filter: drop-shadow(0 0 1rem white);
 }
 
 .arriba {
@@ -24,6 +26,7 @@
   border: none;
   position: absolute;
   right: 0;
+  cursor: pointer;
 }
 
 .Titulo {
@@ -64,10 +67,6 @@
   color: gray;
 }
 
-.tarjeta {
-  background-color: black;
-}
-
 .cardLink {
   text-decoration: none;
   width: 100%;
@@ -78,6 +77,7 @@
   background: black;
   height: min-content;
   position: absolute;
+
 }
 
 .dislike{

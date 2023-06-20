@@ -23,14 +23,18 @@ function App() {
       !access && navigate("/"); 
    }, [access]); 
 
-
-
    const email = "vickyrodriguez544@gmail.com"; 
    const password = "pass123"; 
 
-
    const onSearch = (id) => {
-      axios(`https://rickandmortyapi.com/api/character/${id}`)
+      const URL_BASE = `http://localhost:3001/rickandmorty`
+
+
+      if (characters.find((char) => char.id === id )){
+         return alert ("personaje repetido"); 
+      }
+
+      axios(`${URL_BASE}/character/${id}`)   //.com/api/character/${id}
          .then((response) => response.data)
          .then(( data ) => {
             setCharacters((oldChars) => [...oldChars, data]);
@@ -41,37 +45,42 @@ function App() {
    }
 
    const onClose = (id) => {
-      const charactersFiltered = characters.filter((character) => character.id !== Number(id)); 
+      const charactersFiltered = characters.filter((character) => character.id !== id); 
       setCharacters(charactersFiltered);
    }; 
 
-
    const login = (userData) => {
-      if(userData.email===email && userData.password===password){
-         setAccess(true); 
-         navigate("/home"); 
-      } else {
-         alert("Datos incorrectos"); 
-      }
-   };
-
+      const { email, password } = userData;
+      const URL = 'http://localhost:3001/rickandmorty/login/';
+      axios(URL + `?email=${email}&password=${password}`)
+         .then(({ data }) => {
+            const { access } = data;
+            setAccess(access);
+            access && navigate('/home');
+         })
+         .catch(() => {
+            alert('no encontré al usuario');
+            console.error('no encontré al usuario');
+         });
+   }
 
   return (
-    <div className={styles.App}>
-
+    <div>
       {pathname !== "/" && <Nav onSearch={onSearch} />}
-      <Routes>
-      <Route path='/' exact element={
-         <>
-            <Banner />
-            <Form login={login}/>
-         </>
-      }/>
-      <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
-      <Route path='/about' element={<About/>}/>
-      <Route path='/favorites' element={<Favorites/>}></Route>
-      <Route path='/detail/:id' element={<Detail/>}/>
-      </Routes>
+      <div className={styles.contenedor}>
+         <Routes>
+            <Route path='/' exact element={
+               <>
+                  <Banner />
+                  <Form login={login}/>
+               </>
+            }/>
+            <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
+            <Route path='/about' element={<About/>}/>
+            <Route path='/favorites' element={<Favorites/>}></Route>
+            <Route path='/detail/:id' element={<Detail/>}/>
+         </Routes>
+      </div>
     </div>
   );
 }
