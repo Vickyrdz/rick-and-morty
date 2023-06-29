@@ -1,3 +1,8 @@
 .favContenedor {
     padding-top: 50px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding-top: 45px;
 }

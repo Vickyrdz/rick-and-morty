@@ -9,6 +9,14 @@ function Card({ id, name, species, origin, gender, image, onClose, status, addFa
 
    const [isFav, setIsFav] = useState(false);
 
+   const [closeBtn, setCloseBtn] = useState(true); 
+
+   useEffect(()=>{
+      if(!onClose){
+         setCloseBtn(false)
+      }
+   }, [])
+
    const handleFavorite = () => {
       if (isFav) {
          setIsFav(false);
@@ -53,9 +61,12 @@ function Card({ id, name, species, origin, gender, image, onClose, status, addFa
                <Link to={`/detail/${id}`} className={styles.cardLink}>
                   <h1 className={styles.Titulo}>{name}</h1>
                </Link>
+
+               {closeBtn && ( 
                <button className={styles.Close} onClick={() => onClose(id)}>
                   <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAfUlEQVR4nO2UywqAIBBFB7KPye+uhfR1fcEJaRYSviakTd2NMl4P80BFfgEL4FqdiJ7olYbJAwcQalCFBfX6GnACVi7twNzhca0si1AzrAbV2GaGZfqEruneBitk+iyzVLcyi4N6v2QyAxg5YddzllXPBROU0U9v+Ocgn9AJmxaCk8SdNUQAAAAASUVORK5CYII=" />
-               </button>
+               </button>) }
+              
             </div>
 
             <img className={styles.imagenCard} src={image} height="250px" alt='' />

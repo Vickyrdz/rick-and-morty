@@ -6,7 +6,8 @@ import About from './components/About/About.jsx';
 import Detail from './components/Detail/Detail.jsx';
 import Form from './components/Form /Form.jsx';
 import Favorites from './components/Favorites/Favorites.jsx';
-
+import { useDispatch } from 'react-redux';
+import { removeFav } from './redux/actions.js';
 import styles from './App.module.css';
 import {useEffect, useState,} from "react"; 
 import axios from 'axios'; 
@@ -25,48 +26,60 @@ function App() {
 
    const email = "vickyrodriguez544@gmail.com"; 
    const password = "pass123"; 
+ 
+   const dispatch = useDispatch();
 
-   const onSearch = (id) => {
-      const URL_BASE = `http://localhost:3001/rickandmorty`
+   const onSearch = async (id) => {
+      const URL_BASE = `http://localhost:3001/rickandmorty`;
 
-
-      if (characters.find((char) => char.id === id )){
-         return alert ("personaje repetido"); 
+      if (characters.find((char) => char.id == id )){
+         return alert ("personaje repetido");
       }
 
-      axios(`${URL_BASE}/character/${id}`)   //.com/api/character/${id}
-         .then((response) => response.data)
-         .then(( data ) => {
+      try {
+         const { data } = await axios(`${URL_BASE}/character/${id}`)
+         if(data.name) {
             setCharacters((oldChars) => [...oldChars, data]);
-         })
-         .catch(() => {
-            alert('¡No hay personajes con este ID!');
-         });
+         }
+      } catch (error) {
+         alert('¡No hay personajes con este ID!');
+      }
    }
 
    const onClose = (id) => {
       const charactersFiltered = characters.filter((character) => character.id !== id); 
       setCharacters(charactersFiltered);
+
+      dispatch(removeFav(id)); 
    }; 
 
-   const login = (userData) => {
-      const { email, password } = userData;
-      const URL = 'http://localhost:3001/rickandmorty/login/';
-      axios(URL + `?email=${email}&password=${password}`)
-         .then(({ data }) => {
-            const { access } = data;
-            setAccess(access);
-            access && navigate('/home');
-         })
-         .catch(() => {
-            alert('no encontré al usuario');
-            console.error('no encontré al usuario');
-         });
+   const URL = 'http://localhost:3001/rickandmorty/login/';
+
+
+   const login = async (userData) => {
+
+      try {
+         const { email, password } = userData;
+         const { data } = await axios(URL + `?email=${email}&password=${password}`)
+         const { access } = data;
+          setAccess(access);
+          access && navigate('/home');
+        
+      } catch (error) {
+         alert('no encontré al usuario');
+         console.error('no encontré al usuario');
+      }
+   }
+
+
+   function onAddRandom () {
+      const random = Math.ceil(Math.random() * 826); 
+      onSearch(random);
    }
 
   return (
     <div>
-      {pathname !== "/" && <Nav onSearch={onSearch} />}
+      {pathname !== "/" && <Nav onSearch={onSearch} onAddRandom={onAddRandom} />}
       <div className={styles.contenedor}>
          <Routes>
             <Route path='/' exact element={
