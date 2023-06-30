@@ -39,7 +39,6 @@ export const addFav = (character) => {
          console.log(error.message);
 
       }
- 
     };
  }; 
 
@@ -61,5 +60,6 @@ export const addFav = (character) => {
  export const resetFavorites = () => {
    return {
       type: RESET,
+      payload: [],
    }
  }

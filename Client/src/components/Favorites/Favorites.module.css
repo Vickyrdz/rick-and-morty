@@ -1,10 +1,10 @@
 .favContenedor {
-    padding-top: 50px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        padding-top: 45px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 45px;
 }
 
 .filtroButton {
@@ -14,7 +14,6 @@
     padding-bottom: 5px;
     margin-right: 5px;
     border-radius: 5px;
-
 }
 
 .filtroButton:hover{
@@ -42,7 +41,6 @@
     border-radius: 5px;
 }
 
-
 .reset:hover:focus {
     box-shadow: inset 0 -3.25em 0 0 var(--hover);
     border-color: var(--hover);
@@ -52,5 +50,14 @@
 }
 
 .filterContenedor {
-    
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.listaCards {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: space-evenly;
 }
