@@ -1,0 +1,39 @@
+.titulo {
+    word-wrap: break-word;
+    display: flex;
+    font-size: 50px;
+    color: rgb(96, 210, 179);
+    justify-content: center;
+    width: 100%;
+    top: 80px;
+    position: relative;
+    text-align: center;
+    font-weight: 700;
+    font-family: "YALBszL9wLA 0", _fb_, auto;
+    --font-size: 192px;
+    --line-height: 0.75;
+    text-transform: uppercase;
+    text-shadow: rgb(37, 84, 172) 5.00246px -4.66487px 0px, rgb(255, 0, 255) -5.00246px 4.66487px 0px;
+}
+
+.description {
+    color: white;
+    margin-top: 100px;
+    font-family: emoji;
+    text-align: center;
+}
+
+.iconContenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.linkedin {
+    margin-right: 15px;
+}
+
+.contenedorAbout{
+    margin-top: 20px;
+}

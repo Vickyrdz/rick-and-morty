@@ -14,16 +14,17 @@ export default function Nav({ onSearch, onAddRandom }) {
             </div>
 
             <div className={styles.navButtons}>
-               <Link to={"/about"}>
-                  <button className={styles.link}> About </button>
-               </Link>
-
+             
                <Link to={"/home"}>
                   <button className={styles.link}> Home </button>
                </Link>
 
                <Link to={"/favorites"}>
                   <button className={styles.link}>  Favoritos </button>
+               </Link>
+               
+               <Link to={"/about"}>
+                  <button className={styles.link}> About </button>
                </Link>
 
 
@@ -32,7 +33,7 @@ export default function Nav({ onSearch, onAddRandom }) {
 
          <div className={styles.searchBarContainer}>
             <SearchBar onSearch={onSearch} className={styles.searchBar} />
-            <button className={styles.random} onClick={onAddRandom}> RANDOM </button>
+            <button className={styles.buttonRandom} onClick={onAddRandom}> ID Random </button>
          </div>
 
        

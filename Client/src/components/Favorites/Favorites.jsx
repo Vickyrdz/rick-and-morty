@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { orderFavorites, filterFavorites, resetFavorites} from "../../redux/actions";
 
 
-const Favorites = ({ onClose }) => {
+const Favorites = ({}) => {
 
     const dispatch = useDispatch();
     const favorites = useSelector((state) => state.myFavorites);
@@ -28,25 +28,24 @@ const Favorites = ({ onClose }) => {
     function handleClose(id){
     dispatch(removeFav(id))
    }
-    
+
 
     return (
         <div className={styles.favContenedor}>
-           <div>
-           <select placeholder="Gender" onChange={handleFilter}>
-                {["Male", "Female", "Unknown", "Genderless"].map((gender) => 
-                   <option disabled selected value={gender}>{gender}</option>
-                 )}
-            </select>
-            <select placeholder="Order" onChange={handleSort}>
-                {["Ascendente", "Descendente"].map((order) => 
-                   <option disabled selected value={order}>{order}</option>
-                 )}
-            </select>
+           <div className={styles.filterContenedor}>
+            <select className={styles.filtroButton} placeholder="Gender" onChange={handleFilter}>
+                    {["Male", "Female", "Unknown", "Genderless"].map((gender) => 
+                    <option className={styles.option} value={gender}>{gender}</option>
+                    )}
+                </select>
+                <select className={styles.filtroButton} placeholder="Order" onChange={handleSort}>
+                    {["Ascendente", "Descendente"].map((order) => 
+                    <option value={order}>{order}</option>
+                    )}
+                </select>
 
-            <button onClick={handleReset}>Reset Filter</button>
+                <button className={styles.reset} onClick={handleReset} >Reset Filter</button>
            </div>
-            
             {
             favorites.map(
                 ({ id, name, status, species, gender, origin, image}) => {
@@ -67,15 +66,5 @@ const Favorites = ({ onClose }) => {
     );
 };
 
-
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//        onClose: (id) => {
-//           dispatch(removeFav(id))
-//        }
-//     };
-//  };
-
-// export default connect(null, mapDispatchToProps)(Favorites); 
 
 export default Favorites
