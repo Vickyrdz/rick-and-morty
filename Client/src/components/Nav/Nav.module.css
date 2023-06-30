@@ -11,6 +11,10 @@
 
 .searchBarContainer {
     display: flex;
+}
+
+.rightContainer {
+    display: flex;
     margin-right: 10px;
 }
 
@@ -33,7 +37,7 @@
     align-items: center;
 }
 
-.link{
+.link {
     text-decoration: none;
     color: white;
     font-weight: 600;
@@ -42,9 +46,11 @@
     background: black;
     position: relative;
     font-size: 16px;
+    padding: 1px 6px;
+    cursor: pointer;
 }
 
-.link:hover{
+.link:hover {
     background: linear-gradient(45deg, #28b4cf, #a5f928);
     -webkit-background-clip: text;
     background-clip: text;
@@ -52,6 +58,18 @@
     text-decoration: underline;
 }
 
+.link[aria-current="page"] {
+    background: linear-gradient(45deg, #28b4cf, #a5f928);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: underline;
+}
+
+.logoutButton {
+    background-color: transparent;
+    margin-left: 25px;
+}
 
 .buttonRandom{
     background: black;

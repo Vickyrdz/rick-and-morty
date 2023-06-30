@@ -27,10 +27,10 @@ function Card({ id, name, species, origin, gender, image, onClose, status, addFa
             id,
             name,
             species,
-            gender,
+            gender: `${gender.charAt(0).toUpperCase()}${gender.substring(1)}`,
             image,
             origin,
-            status
+            status: `${status.charAt(0).toUpperCase()}${status.substring(1)}`
          })
       }
    };

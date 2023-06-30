@@ -55,9 +55,7 @@ function App() {
 
    const URL = 'http://localhost:3001/rickandmorty/login/';
 
-
    const login = async (userData) => {
-
       try {
          const { email, password } = userData;
          const { data } = await axios(URL + `?email=${email}&password=${password}`)
@@ -71,6 +69,11 @@ function App() {
       }
    }
 
+   const logout = () => {
+      setAccess(false);
+      navigate('/');
+   }
+
 
    function onAddRandom () {
       const random = Math.ceil(Math.random() * 826); 
@@ -79,7 +82,7 @@ function App() {
 
   return (
     <div>
-      {pathname !== "/" && <Nav onSearch={onSearch} onAddRandom={onAddRandom} />}
+      {pathname !== "/" && <Nav onSearch={onSearch} onAddRandom={onAddRandom} onLogout={logout} />}
       <div className={styles.contenedor}>
          <Routes>
             <Route path='/' exact element={

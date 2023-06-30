@@ -36,7 +36,7 @@ const Favorites = ({ }) => {
             <div className={styles.filterContenedor}>
                 <select className={styles.filtroButton} placeholder="Gender" onChange={handleFilter} value={currentFilter}>
                     {["All", "Male", "Female", "Unknown", "Genderless"].map((gender) =>
-                        <option key={gender} className={styles.option} value={gender}>{gender}</option>
+                        <option key={gender} value={gender}>{gender}</option>
                     )}
                 </select>
                 <select className={styles.filtroButton} placeholder="Order" onChange={handleSort}>

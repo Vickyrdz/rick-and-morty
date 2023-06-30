@@ -13,6 +13,7 @@
     border-right: none;
     border-left: none;
     border-top: none;
+    min-width: 185px;
 }
 
 .input:hover{
